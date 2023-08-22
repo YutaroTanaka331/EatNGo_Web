@@ -5,6 +5,11 @@
     --dark: #14141F;
     --green: #119d04;
     --red: #FF0000;
+    --gray:#535353;
+}
+
+.my-paragraph {
+    font-size: 20px;
 }
 
 .ff-secondary {
@@ -25,6 +30,10 @@
 
 .text-red {
     color: var(--red);
+}
+
+.text-gray {
+    color: var(--gray);
 }
 
 .fw-medium {
@@ -163,7 +172,7 @@
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
     }
-    
+
     .sticky-top.navbar-light {
         position: fixed;
         background: #FFFFFF;

@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\RestaurantsController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,28 +17,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get("/", function() {
+    return redirect("/home");
+  });
 
-Route::get('/', function () {
-    return view('home', [
-        "title" => "Home"
-    ]);
-});
+Route::get('/home', [HomeController::class, 'create']);
 
-Route::get('/home', function () {
-    return view('home', [
-        "title" => "Home"
-    ]);
-});
+Route::get('/restaurants', [RestaurantsController::class, 'create']);
 
+Route::get('/menu/{id}', [MenuController::class, 'create']);
 
-Route::get('/restaurants', function () {
-    return view('restaurants', [
-        "title" => "Restaurants"
-    ]);
-});
-
-Route::get('/menu', function () {
-    return view('menu', [
-        "title" => "Menu Sushi"
-    ]);
-});
